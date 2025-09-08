@@ -8,7 +8,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<String> listFilm = [
+  final List<String> listFilm1 = [
     'assets/images/totoro.jpg',
     'assets/images/howl.png',
     'assets/images/el-viento.jpg',
@@ -16,23 +16,38 @@ class _HomePageState extends State<HomePage> {
     'assets/images/the-boys.jpeg',
   ];
 
+  final List<String> listFilm2 = [
+    'assets/images/tangled.jpeg',
+    'assets/images/zootopia.jpeg',
+    'assets/images/brave.jpeg',
+    'assets/images/frozen.jpg',
+    'assets/images/luca.jpg'
+  ];
+
+  final List<String> listFilm3 = [
+    'assets/images/insideout2.png',
+    'assets/images/up.jpg',
+    'assets/images/encanto.jpg',
+    'assets/images/turningred.jpg',
+    'assets/images/onward.jpg'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
         automaticallyImplyLeading: false,
-        leading: Icon(Icons.menu, color: Colors.black),
+        leading: Icon(Icons.menu,size: 30, color: const Color.fromARGB(255, 13, 90, 153)),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Icon(Icons.account_circle, color: Colors.black,size: 30),
+            child: Icon(Icons.search, color: Color.fromARGB(255, 13, 90, 153)),
           ),
         ],
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.blue, Colors.purple], 
+              colors: [Colors.white, Colors.grey], 
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -40,65 +55,74 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: SafeArea(
+        child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            SizedBox(height: 15),
+            SizedBox(height: 5),
             Padding(
               padding: const EdgeInsets.only(left: 10, right: 10),
               child: Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.search, size: 18),
-                        hint: Text("Search"),
-                        hintStyle: TextStyle(color: Colors.black),
-                        contentPadding: EdgeInsets.symmetric(
-                          vertical: 10.0,
-                          horizontal: 10.0,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 10),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(16),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 5,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Icon(Icons.favorite_border, color: Colors.black),
-                    ),
-                  ),
-                ],
+                children: [],
               ),
             ),
+
             SizedBox(height: 15),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: List.generate(5, (index) {
                   return Container(
-                    width: 150,
-                    height: 200,
+                    width: 180,
+                    height: 250,
                     margin: EdgeInsets.only(left: 10),
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(5),
                       image: DecorationImage(
-                        image: AssetImage(listFilm[index]),
+                        image: AssetImage(listFilm1[index]),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  );
+                }),
+              ),
+            ), 
+
+            SizedBox(height: 15),
+             SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(5, (index) {
+                  return Container(
+                    margin: EdgeInsets.only(left: 10),
+                   child: ClipRRect(
+                    borderRadius: BorderRadius.circular(5),
+                    child: Image.asset(listFilm2[index], 
+                    height: 150,
+                    width: 120,
+                    fit: BoxFit.fitWidth
+                    ),
+                   ),
+                  );
+                }),
+              ),
+            ), 
+
+            SizedBox(height: 15),
+             SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(5, (index) {
+                  return Container(
+                    width: 120,
+                    height: 150,
+                    margin: EdgeInsets.only(left: 10),
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      image: DecorationImage(
+                        image: AssetImage(listFilm3[index]),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -108,6 +132,7 @@ class _HomePageState extends State<HomePage> {
             ), 
           ],
         ),
+      ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
