@@ -1,16 +1,17 @@
-import 'package:flutter/material.dart';
-import 'package:project_mobile/pages/home.dart';
+import "package:flutter/material.dart";
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegistrasiPage extends StatelessWidget {
+  const RegistrasiPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text('Login', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold)),
+        title: Text(
+            'Registrasi',
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
+        centerTitle: true
       ),
       body: SafeArea(
         child: Column(
@@ -23,10 +24,29 @@ class LoginPage extends StatelessWidget {
                 children: [
                   TextField(
                     decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.person, size: 18),
+                      hint: Text("Masukan Nama"),
+                      hintStyle: TextStyle(color: Colors.black),
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 14.0,
+                        horizontal: 14.0,
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+
+                  TextField(
+                    decoration: InputDecoration(
                       prefixIcon: Icon(Icons.email, size: 18),
                       hint: Text("Masukkan Email"),
                       hintStyle: TextStyle(color: Colors.black),
-                      contentPadding: EdgeInsets.symmetric(vertical: 14.0,horizontal: 14.0),
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 14.0,
+                        horizontal: 14.0,
+                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
@@ -39,7 +59,10 @@ class LoginPage extends StatelessWidget {
                       prefixIcon: Icon(Icons.lock, size: 18),
                       hint: Text("Password"),
                       hintStyle: TextStyle(color: Colors.black),
-                      contentPadding: EdgeInsets.symmetric(vertical: 14.0,horizontal: 14.0),
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 14.0,
+                        horizontal: 14.0,
+                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
@@ -47,21 +70,9 @@ class LoginPage extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
 
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Text("Lupa Password",
-                        style: TextStyle(color: Colors.black,fontSize: 12))
-                  ),
-                  SizedBox(height: 20),
-
                   ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => HomePage()),
-                      );
-                    },
-                    child: Text("Login"),
+                    onPressed: () {},
+                    child: Text("Daftar"),
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                       foregroundColor: Colors.white,
@@ -70,23 +81,6 @@ class LoginPage extends StatelessWidget {
                         borderRadius: BorderRadiusGeometry.circular(16),
                       ),
                     ),
-                  ),
-                  SizedBox(height: 20),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Belum Punya Akun?"),
-                      TextButton(
-                        child: Text("Daftar", style: TextStyle(color: Colors.black)),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => LoginPage()),
-                          );
-                        },
-                      ),
-                    ],
                   ),
                 ],
               ),
