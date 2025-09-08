@@ -59,14 +59,6 @@ class _HomePageState extends State<HomePage> {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            SizedBox(height: 5),
-            Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10),
-              child: Row(
-                children: [],
-              ),
-            ),
-
             SizedBox(height: 15),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -88,6 +80,16 @@ class _HomePageState extends State<HomePage> {
                 }),
               ),
             ), 
+            
+            SizedBox(height: 15),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Text('Now Playing', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              ),
+            ),
+
 
             SizedBox(height: 15),
              SingleChildScrollView(
@@ -108,6 +110,16 @@ class _HomePageState extends State<HomePage> {
                 }),
               ),
             ), 
+
+            SizedBox(height: 15),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Text('Upcoming', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              ),
+            ),
+
 
             SizedBox(height: 15),
              SingleChildScrollView(
