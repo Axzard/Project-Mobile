@@ -110,6 +110,9 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.black,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_filled), 
