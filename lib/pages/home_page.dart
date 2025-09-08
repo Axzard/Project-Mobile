@@ -35,6 +35,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: Icon(Icons.menu,size: 30, color: const Color.fromARGB(255, 13, 90, 153)),
@@ -44,6 +45,7 @@ class _HomePageState extends State<HomePage> {
             child: Icon(Icons.search, color: Color.fromARGB(255, 13, 90, 153)),
           ),
         ],
+
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -54,6 +56,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+
+
       body: SafeArea(
         child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -157,6 +161,8 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       ),
+
+
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         selectedItemColor: Colors.black,
