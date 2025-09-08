@@ -13,14 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text('flutter Mobile Lanjutan', style: TextStyle(color: Colors.white),),
-          backgroundColor: Colors.blue,
-        ),
-        body: const LoginPage(),
-      ),
+      home: LoginPage()
     );
   }
 }
