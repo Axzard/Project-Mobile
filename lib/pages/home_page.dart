@@ -82,12 +82,18 @@ class _HomePageState extends State<HomePage> {
             ), 
             
             SizedBox(height: 15),
-            Align(
+             Align(
               alignment: Alignment.topLeft,
               child: Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text('Now Playing', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-              ),
+                padding: const EdgeInsets.only(left: 10,right: 10),
+                child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [  
+                Text('Now Playing', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Icon(Icons.arrow_forward_ios, size: 15)
+              ],
+                )
+            ),
             ),
 
 
@@ -115,11 +121,16 @@ class _HomePageState extends State<HomePage> {
             Align(
               alignment: Alignment.topLeft,
               child: Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text('Upcoming', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-              ),
+                padding: const EdgeInsets.only(left: 10,right: 10),
+                child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [  
+                Text('Upcoming', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Icon(Icons.arrow_forward_ios, size: 15)
+              ],
+                )
             ),
-
+            ),
 
             SizedBox(height: 15),
              SingleChildScrollView(
@@ -155,8 +166,8 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.home_filled), 
             label: 'Home'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favorite',
+            icon: Icon(Icons.download),
+            label: 'Download',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle), 
