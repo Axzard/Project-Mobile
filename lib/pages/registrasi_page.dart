@@ -1,3 +1,5 @@
+import "dart:ui";
+
 import "package:flutter/material.dart";
 
 class RegistrasiPage extends StatelessWidget {
@@ -6,87 +8,116 @@ class RegistrasiPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-            'Registrasi',
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true
-      ),
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SizedBox(height: 50),
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                children: [
-                  TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.person, size: 18),
-                      hint: Text("Masukan Nama"),
-                      hintStyle: TextStyle(color: Colors.black),
-                      contentPadding: EdgeInsets.symmetric(
-                        vertical: 14.0,
-                        horizontal: 14.0,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-
-                  TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.email, size: 18),
-                      hint: Text("Masukkan Email"),
-                      hintStyle: TextStyle(color: Colors.black),
-                      contentPadding: EdgeInsets.symmetric(
-                        vertical: 14.0,
-                        horizontal: 14.0,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-
-                  TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.lock, size: 18),
-                      hint: Text("Password"),
-                      hintStyle: TextStyle(color: Colors.black),
-                      contentPadding: EdgeInsets.symmetric(
-                        vertical: 14.0,
-                        horizontal: 14.0,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text("Daftar"),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: Size(double.infinity, 50),
-                      foregroundColor: Colors.white,
-                      backgroundColor: Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadiusGeometry.circular(16),
-                      ),
-                    ),
-                  ),
-                ],
+     body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/insideout2.png"), 
+                fit: BoxFit.cover,
               ),
             ),
-          ],
-        ),
+          ),
+
+          
+          BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5), 
+            child: Container(
+              color: Colors.black.withOpacity(0.3), 
+            ),
+          ),
+
+          
+          SafeArea(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+
+                       TextField(
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.lock, size: 18, color: Colors.white),
+                          hintText: "Nama Anda",
+                          hintStyle: TextStyle(color: Colors.white),
+                          contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                        ),
+                        style: TextStyle(color: Colors.white)
+                      ),
+                      SizedBox(height: 20),
+
+                      TextField(
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.email, size: 18, color: Colors.white),
+                          hintText: "Masukkan Email",
+                          hintStyle: TextStyle(color: Colors.white),
+                          contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                        ),
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      SizedBox(height: 20),
+
+                      
+                      TextField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.lock, size: 18, color: Colors.white),
+                          hintText: "Password",
+                          hintStyle: TextStyle(color: Colors.white),
+                          contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                        ),
+                        style: TextStyle(color: Colors.white)
+                      ),
+                      SizedBox(height: 20),
+                      
+                       TextField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.lock, size: 18, color: Colors.white),
+                          hintText: "KonfirmasiPassword",
+                          hintStyle: TextStyle(color: Colors.white),
+                          contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                        ),
+                        style: TextStyle(color: Colors.white)
+                      ),
+                      SizedBox(height: 20),
+
+
+                      ElevatedButton(
+                        onPressed: () {
+                          
+                        },
+                        child: Text("Daftar"),
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: Size(double.infinity, 50),
+                          foregroundColor: Colors.white,
+                          backgroundColor: Colors.red,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

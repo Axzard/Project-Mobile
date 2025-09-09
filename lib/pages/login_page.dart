@@ -1,5 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:project_mobile/pages/home_page.dart';
+import 'package:project_mobile/pages/registrasi_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -46,7 +48,6 @@ class LoginPage extends StatelessWidget {
                           contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(16),
-                            borderSide: BorderSide(color: Colors.black)
                           ),
                         ),
                         style: TextStyle(color: Colors.white),
@@ -59,7 +60,7 @@ class LoginPage extends StatelessWidget {
                         decoration: InputDecoration(
                           prefixIcon: Icon(Icons.lock, size: 18, color: Colors.white),
                           hintText: "Password",
-                          hintStyle: TextStyle(color: Colors.white),
+                          hintStyle: TextStyle(color: Colors.black),
                           contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(16),
@@ -77,7 +78,12 @@ class LoginPage extends StatelessWidget {
                       SizedBox(height: 20),
 
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomePage()),
+                          );
+                        },
                         child: Text("Login"),
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size(double.infinity, 50),
@@ -97,7 +103,9 @@ class LoginPage extends StatelessWidget {
                               style: TextStyle(color: Colors.white, fontSize: 12)),
                           TextButton(
                             child: Text("Daftar", style: TextStyle(color: Colors.white)),
-                            onPressed: () {},
+                            onPressed: () {
+                             Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrasiPage()));
+                            },
                           ),
                         ],
                       ),
