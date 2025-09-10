@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
     'assets/images/zootopia.jpeg',
     'assets/images/brave.jpeg',
     'assets/images/frozen.jpg',
-    'assets/images/luca.jpg'
+    'assets/images/luca.jpg',
   ];
 
   final List<String> listFilm3 = [
@@ -29,43 +29,90 @@ class _HomePageState extends State<HomePage> {
     'assets/images/up.jpg',
     'assets/images/encanto.jpg',
     'assets/images/turningred.jpg',
-    'assets/images/onward.jpg'
+    'assets/images/onward.jpg',
   ];
 
-
-   final List<String> listFilm4 = [
+  final List<String> listFilm4 = [
     'assets/images/avatar.jpg',
     'assets/images/avatar2.jpg',
     'assets/images/ant-man.jpg',
     'assets/images/avenger-andgame.jpg',
-    'assets/images/black-panter.jpg'
+    'assets/images/black-panter.jpg',
   ];
 
-
+  bool _isSearching = false;
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: IconButton(
-          onPressed: (){
-            Navigator.pop(context);
-          }, 
-          icon: Icon(Icons.exit_to_app_outlined, color: Colors.white)
-        ),
+        leading: !_isSearching
+            ? IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(
+                  Icons.exit_to_app_outlined,
+                  color: Colors.white,
+                ),
+              )
+            : null,
+        title: !_isSearching
+            ? null
+            : Container(
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Colors.grey[900],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 14),
+                  child: TextField(
+                    controller: _searchController,
+                    autofocus: true,
+                    style: const TextStyle(color: Colors.white),
+                    decoration: const InputDecoration(
+                      hintText: "Ketik untuk mencari",
+                      hintStyle: TextStyle(color: Colors.white70, fontSize: 12),
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.symmetric(vertical: 15),
+                    ),
+                    onChanged: (value) {
+                      print("User mengetik: $value");
+                    },
+                  ),
+                ),
+              ),
         actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(Icons.search, color: Colors.white),
-          ),
+          _isSearching
+              ? TextButton(
+                  onPressed: () {
+                    setState(() {
+                      _isSearching = false;
+                      _searchController.clear();
+                    });
+                  },
+                  child: const Text(
+                    "Cancel",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
+              : IconButton(
+                  icon: const Icon(Icons.search, color: Colors.white),
+                  onPressed: () {
+                    setState(() {
+                      _isSearching = true;
+                    });
+                  },
+                ),
         ],
 
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color.fromARGB(255, 177, 20, 9),Colors.black], 
+              colors: [Color.fromARGB(255, 177, 20, 9), Colors.black],
               begin: Alignment.topRight,
               end: Alignment.bottomRight,
             ),
@@ -76,146 +123,165 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.black,
       body: SafeArea(
         child: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            SizedBox(height: 15),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: List.generate(5, (index) {
-                  return Container(
-                    width: 180,
-                    height: 250,
-                    margin: EdgeInsets.only(left: 10),
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      image: DecorationImage(
-                        image: AssetImage(listFilm1[index]),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  );
-                }),
-              ),
-            ), 
-            
-            SizedBox(height: 15),
-             Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10,right: 10),
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              SizedBox(height: 15),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                 child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [  
-                Text('Now Playing', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
-                Icon(Icons.arrow_forward_ios, size: 15)
-              ],
-                )
-            ),
-            ),
-
-
-            SizedBox(height: 15),
-             SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: List.generate(5, (index) {
-                  return Container(
-                    margin: EdgeInsets.only(left: 10),
-                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: Image.asset(listFilm2[index], 
-                    height: 150,
-                    width: 120,
-                    fit: BoxFit.fitWidth
-                    ),
-                   ),
-                  );
-                }),
-              ),
-            ), 
-
-            SizedBox(height: 15),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10,right: 10),
-                child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [  
-                Text('Upcoming', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white)),
-                Icon(Icons.arrow_forward_ios, size: 15)
-              ],
-                )
-            ),
-            ),
-
-            SizedBox(height: 15),
-             SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: List.generate(5, (index) {
-                  return Container(
-                    width: 120,
-                    height: 150,
-                    margin: EdgeInsets.only(left: 10),
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      image: DecorationImage(
-                        image: AssetImage(listFilm3[index]),
-                        fit: BoxFit.cover,
+                  children: List.generate(5, (index) {
+                    return Container(
+                      width: 180,
+                      height: 250,
+                      margin: EdgeInsets.only(left: 10),
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage(listFilm1[index]),
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                  );
-                }),
+                    );
+                  }),
+                ),
               ),
-            ), 
 
-            SizedBox(height: 15),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10,right: 10),
-                child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [  
-                Text('Marvel', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white)),
-                Icon(Icons.arrow_forward_ios, size: 15)
-              ],
-                )
-            ),
-            ),
-
-
-            SizedBox(height: 15),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: List.generate(5, (index) {
-                  return Container(
-                    width: 120,
-                    height: 150,
-                    margin: EdgeInsets.only(left: 10),
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      image: DecorationImage(
-                        image: AssetImage(listFilm4[index]),
-                        fit: BoxFit.cover,
+              SizedBox(height: 15),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Now Playing',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                  );
-                }),
+                      Icon(Icons.arrow_forward_ios, size: 15),
+                    ],
+                  ),
+                ),
               ),
-            ), 
-          ],
+
+              SizedBox(height: 15),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(5, (index) {
+                    return Container(
+                      margin: EdgeInsets.only(left: 10),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(5),
+                        child: Image.asset(
+                          listFilm2[index],
+                          height: 150,
+                          width: 120,
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ),
+                    );
+                  }),
+                ),
+              ),
+
+              SizedBox(height: 15),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Upcoming',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Icon(Icons.arrow_forward_ios, size: 15),
+                    ],
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 15),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(5, (index) {
+                    return Container(
+                      width: 120,
+                      height: 150,
+                      margin: EdgeInsets.only(left: 10),
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage(listFilm3[index]),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    );
+                  }),
+                ),
+              ),
+
+              SizedBox(height: 15),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Marvel',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Icon(Icons.arrow_forward_ios, size: 15),
+                    ],
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 15),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(5, (index) {
+                    return Container(
+                      width: 120,
+                      height: 150,
+                      margin: EdgeInsets.only(left: 10),
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage(listFilm4[index]),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    );
+                  }),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-      ),
-
 
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.black,
@@ -223,16 +289,15 @@ class _HomePageState extends State<HomePage> {
         selectedItemColor: Colors.grey,
         unselectedItemColor: Colors.grey,
         items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled), 
-            label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: 'Home'),
           BottomNavigationBarItem(
             icon: Icon(Icons.download),
             label: 'Download',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle), 
-            label: 'Profile'),
+            icon: Icon(Icons.account_circle),
+            label: 'Profile',
+          ),
         ],
       ),
     );
