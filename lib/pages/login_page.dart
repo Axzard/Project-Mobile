@@ -60,7 +60,7 @@ class LoginPage extends StatelessWidget {
                         decoration: InputDecoration(
                           prefixIcon: Icon(Icons.lock, size: 18, color: Colors.white),
                           hintText: "Password",
-                          hintStyle: TextStyle(color: Colors.black),
+                          hintStyle: TextStyle(color: Colors.white),
                           contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(16),
