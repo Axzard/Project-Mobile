@@ -40,7 +40,7 @@ class RegistrasiPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(20.0),
                   child: Column(
                     children: [
 
@@ -112,7 +112,7 @@ class RegistrasiPage extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size(double.infinity, 50),
                           foregroundColor: Colors.white,
-                          backgroundColor: Colors.red,
+                          backgroundColor: const Color.fromARGB(255, 177, 20, 9),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16),
                           ),
