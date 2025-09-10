@@ -13,7 +13,7 @@ class RegistrasiPage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/insideout2.png"), 
+                image: AssetImage("assets/images/background.jpg"), 
                 fit: BoxFit.cover,
               ),
             ),
