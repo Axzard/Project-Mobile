@@ -7,6 +7,9 @@ class RegistrasiPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    
+      resizeToAvoidBottomInset: false,
+
      body: Stack(
         children: [
           Container(
@@ -36,9 +39,8 @@ class RegistrasiPage extends StatelessWidget {
             ),
           ),
           SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 200),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(20.0),
@@ -94,7 +96,6 @@ class RegistrasiPage extends StatelessWidget {
                 ],
               ),
             ),
-          ),
         ],
       ),
     );
