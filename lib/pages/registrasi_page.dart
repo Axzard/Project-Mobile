@@ -36,92 +36,63 @@ class RegistrasiPage extends StatelessWidget {
             ),
           ),
           SafeArea(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    children: [
-
-                       TextField(
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.lock, size: 18, color: Colors.white),
-                          hintText: "Nama Anda",
-                          hintStyle: TextStyle(color: Colors.white,fontSize: 14),
-                          contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 200),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      children: [
+              
+                         TextField(
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.lock, size: 18, color: Colors.white),
+                            hintText: "Alamat Email",
+                            hintStyle: TextStyle(color: Colors.white,fontSize: 14),
+                            contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                          style: TextStyle(color: Colors.white)
+                        ),
+                        SizedBox(height: 20),
+              
+                        TextField(
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.email, size: 18, color: Colors.white),
+                            hintText: "Password",
+                            hintStyle: TextStyle(color: Colors.white,fontSize: 14),
+                            contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                          style: TextStyle(color: Colors.white),
+                        ),
+                       
+                        SizedBox(height: 20),
+              
+                        ElevatedButton(
+                          onPressed: () {
+                            
+                          },
+                          child: Text("Daftar"),
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: Size(double.infinity, 50),
+                            foregroundColor: Colors.white,
+                            backgroundColor: const Color.fromARGB(255, 177, 20, 9),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
                           ),
                         ),
-                        style: TextStyle(color: Colors.white)
-                      ),
-                      SizedBox(height: 20),
-
-                      TextField(
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.email, size: 18, color: Colors.white),
-                          hintText: "Masukkan Email",
-                          hintStyle: TextStyle(color: Colors.white,fontSize: 14),
-                          contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                        ),
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      SizedBox(height: 20),
-
-                      
-                      TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.lock, size: 18, color: Colors.white),
-                          hintText: "Password",
-                          hintStyle: TextStyle(color: Colors.white,fontSize: 14),
-                          contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                        ),
-                        style: TextStyle(color: Colors.white)
-                      ),
-                      SizedBox(height: 20),
-                      
-                       TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.lock, size: 18, color: Colors.white),
-                          hintText: "Konfirmasi Password",
-                          hintStyle: TextStyle(color: Colors.white,fontSize: 14),
-                          contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                        ),
-                        style: TextStyle(color: Colors.white)
-                      ),
-                      SizedBox(height: 20),
-
-
-                      ElevatedButton(
-                        onPressed: () {
-                          
-                        },
-                        child: Text("Daftar"),
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: Size(double.infinity, 50),
-                          foregroundColor: Colors.white,
-                          backgroundColor: const Color.fromARGB(255, 177, 20, 9),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],

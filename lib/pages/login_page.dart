@@ -47,7 +47,7 @@ class LoginPage extends StatelessWidget {
                           hintStyle: TextStyle(color: Colors.white,fontSize: 14),
                           contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(8),
                           ),
                         ),
                         style: TextStyle(color: Colors.white),
@@ -63,7 +63,7 @@ class LoginPage extends StatelessWidget {
                           hintStyle: TextStyle(color: Colors.white,fontSize: 14),
                           contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(8),
                           ),
                         ),
                         style: TextStyle(color: Colors.white)
@@ -87,7 +87,7 @@ class LoginPage extends StatelessWidget {
                           foregroundColor: Colors.white,
                           backgroundColor: const Color.fromARGB(255, 177, 20, 9),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(8),
                           ),
                         ),
                       ),
