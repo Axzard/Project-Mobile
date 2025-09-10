@@ -44,7 +44,7 @@ class LoginPage extends StatelessWidget {
                         decoration: InputDecoration(
                           prefixIcon: Icon(Icons.email, size: 18, color: Colors.white),
                           hintText: "Masukkan Email",
-                          hintStyle: TextStyle(color: Colors.white),
+                          hintStyle: TextStyle(color: Colors.white,fontSize: 14),
                           contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(16),
@@ -60,7 +60,7 @@ class LoginPage extends StatelessWidget {
                         decoration: InputDecoration(
                           prefixIcon: Icon(Icons.lock, size: 18, color: Colors.white),
                           hintText: "Password",
-                          hintStyle: TextStyle(color: Colors.white),
+                          hintStyle: TextStyle(color: Colors.white,fontSize: 14),
                           contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(16),
