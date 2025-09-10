@@ -49,7 +49,12 @@ class _HomePageState extends State<HomePage> {
       
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: Icon(Icons.menu,size: 30, color: Colors.white),
+        leading: IconButton(
+          onPressed: (){
+            Navigator.pop(context);
+          }, 
+          icon: Icon(Icons.exit_to_app_outlined, color: Colors.white)
+        ),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
