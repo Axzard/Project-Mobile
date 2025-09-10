@@ -32,6 +32,17 @@ class _HomePageState extends State<HomePage> {
     'assets/images/onward.jpg'
   ];
 
+
+   final List<String> listFilm4 = [
+    'assets/images/avatar.jpg',
+    'assets/images/avatar2.jpg',
+    'assets/images/ant-man.jpg',
+    'assets/images/avenger-andgame.jpg',
+    'assets/images/black-panter.jpg'
+  ];
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -157,7 +168,44 @@ class _HomePageState extends State<HomePage> {
                 }),
               ),
             ), 
+
             SizedBox(height: 15),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10,right: 10),
+                child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [  
+                Text('Marvel', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white)),
+                Icon(Icons.arrow_forward_ios, size: 15)
+              ],
+                )
+            ),
+            ),
+
+
+            SizedBox(height: 15),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(5, (index) {
+                  return Container(
+                    width: 120,
+                    height: 150,
+                    margin: EdgeInsets.only(left: 10),
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      image: DecorationImage(
+                        image: AssetImage(listFilm4[index]),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  );
+                }),
+              ),
+            ), 
           ],
         ),
       ),
