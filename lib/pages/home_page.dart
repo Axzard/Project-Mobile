@@ -47,6 +47,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
         automaticallyImplyLeading: false,
         leading: !_isSearching
             ? IconButton(
@@ -58,6 +59,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.white,
                 ),
               )
+
             : null,
         title: !_isSearching
             ? null
@@ -75,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                     style: const TextStyle(color: Colors.white),
                     decoration: const InputDecoration(
                       hintText: "Ketik untuk mencari",
-                      hintStyle: TextStyle(color: Colors.white70, fontSize: 12),
+                      hintStyle: TextStyle(color: Colors.white, fontSize: 12),
                       border: InputBorder.none,
                       contentPadding: EdgeInsets.symmetric(vertical: 15),
                     ),
@@ -85,6 +87,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+
+
         actions: [
           _isSearching
               ? TextButton(
@@ -126,6 +130,7 @@ class _HomePageState extends State<HomePage> {
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
+
               SizedBox(height: 15),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
