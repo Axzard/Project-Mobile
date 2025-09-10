@@ -38,26 +38,26 @@ class _HomePageState extends State<HomePage> {
       
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: Icon(Icons.menu,size: 30, color: const Color.fromARGB(255, 13, 90, 153)),
+        leading: Icon(Icons.menu,size: 30, color: Colors.white),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Icon(Icons.search, color: Color.fromARGB(255, 13, 90, 153)),
+            child: Icon(Icons.search, color: Colors.white),
           ),
         ],
 
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.white, Colors.grey], 
-              begin: Alignment.topLeft,
+              colors: [Color.fromARGB(255, 177, 20, 9),Colors.black], 
+              begin: Alignment.topRight,
               end: Alignment.bottomRight,
             ),
           ),
         ),
       ),
 
-
+      backgroundColor: Colors.black,
       body: SafeArea(
         child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [  
-                Text('Now Playing', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Text('Now Playing', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
                 Icon(Icons.arrow_forward_ios, size: 15)
               ],
                 )
@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [  
-                Text('Upcoming', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Text('Upcoming', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white)),
                 Icon(Icons.arrow_forward_ios, size: 15)
               ],
                 )
@@ -157,6 +157,7 @@ class _HomePageState extends State<HomePage> {
                 }),
               ),
             ), 
+            SizedBox(height: 15),
           ],
         ),
       ),
