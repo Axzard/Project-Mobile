@@ -1,5 +1,4 @@
 import "dart:ui";
-
 import "package:flutter/material.dart";
 
 class RegistrasiPage extends StatelessWidget {
@@ -27,7 +26,15 @@ class RegistrasiPage extends StatelessWidget {
             ),
           ),
 
-          
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.white,size: 30),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ),
           SafeArea(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
