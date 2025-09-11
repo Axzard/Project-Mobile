@@ -11,8 +11,8 @@ class CategoryButton extends StatefulWidget {
 }
 
 class _CategoryButtonState extends State<CategoryButton> {
-  final Color accentColor = Color(0xFF415A77); 
-  final Color accentPressed = Color(0xFF778DA9); 
+  final Color accentColor = Color(0xFF0D1B2A); 
+  final Color accentPressed = Color(0xFF415A77); 
   bool _isPressed = false;
 
   @override

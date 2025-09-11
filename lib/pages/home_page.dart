@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
             : Container(
                 height: 40,
                 decoration: BoxDecoration(
-                  color: Colors.grey[900],
+                  color: Color(0xFF0D1B2A),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Padding(
@@ -306,6 +306,7 @@ class _HomePageState extends State<HomePage> {
                   }),
                 ),
               ),
+              SizedBox(height: 15)
             ],
           ),
         ),
