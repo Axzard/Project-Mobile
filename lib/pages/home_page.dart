@@ -133,12 +133,12 @@ class _HomePageState extends State<HomePage> {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     CategoryButton(title: 'All', onTap: () {}),
                     CategoryButton(title: 'Anime', onTap: () {}),
-                    CategoryButton(title: 'Action', onTap: () {}),
-                    CategoryButton(title: 'Drama', onTap: () {}),
-                    CategoryButton(title: 'Comedy', onTap: () {}),
+                    CategoryButton(title: 'Disney', onTap: () {}),
+                    CategoryButton(title: 'Marvel', onTap: () {}),
                   ],
                 ),
               ),
