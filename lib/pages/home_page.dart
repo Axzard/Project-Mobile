@@ -316,7 +316,7 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
-            label: 'Profile',
+            label: 'Profil',
           ),
         ],
       ),
