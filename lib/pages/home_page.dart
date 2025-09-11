@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_mobile/widgets/category_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -127,6 +128,21 @@ class _HomePageState extends State<HomePage> {
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
+
+              SizedBox(height: 8),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    CategoryButton(title: 'All', onTap: () {}),
+                    CategoryButton(title: 'Anime', onTap: () {}),
+                    CategoryButton(title: 'Action', onTap: () {}),
+                    CategoryButton(title: 'Drama', onTap: () {}),
+                    CategoryButton(title: 'Comedy', onTap: () {}),
+                  ],
+                ),
+              ),
+
               SizedBox(height: 15),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -158,14 +174,18 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Now Playing',
+                        'Recommended for You',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                       ),
-                      Icon(Icons.arrow_forward_ios, size: 15),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 15,
+                        color: Colors.white,
+                      ),
                     ],
                   ),
                 ),
@@ -203,12 +223,16 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         'Upcoming',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                       ),
-                      Icon(Icons.arrow_forward_ios, size: 15),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 15,
+                        color: Colors.white,
+                      ),
                     ],
                   ),
                 ),
@@ -247,12 +271,16 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         'Marvel',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                       ),
-                      Icon(Icons.arrow_forward_ios, size: 15),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 15,
+                        color: Colors.white,
+                      ),
                     ],
                   ),
                 ),
