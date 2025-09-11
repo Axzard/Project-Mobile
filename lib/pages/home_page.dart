@@ -111,18 +111,10 @@ class _HomePageState extends State<HomePage> {
                 ),
         ],
 
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Color(0xFF0D1B2A), Color(0xFF1B263B)],
-              begin: Alignment.topRight,
-              end: Alignment.bottomRight,
-            ),
-          ),
-        ),
+        backgroundColor: Color(0xFF0D1B2A),
       ),
 
-      backgroundColor: Color(0xFF1B263B),
+      backgroundColor: Color(0xFF0D1B2A),
       body: SafeArea(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
