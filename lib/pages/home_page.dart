@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color.fromARGB(255, 177, 20, 9), Colors.black],
+              colors: [Color(0xFF0D1B2A), Color(0xFF1B263B)],
               begin: Alignment.topRight,
               end: Alignment.bottomRight,
             ),
@@ -122,20 +122,19 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
 
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF1B263B),
       body: SafeArea(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-
               SizedBox(height: 8),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    CategoryButton(title: 'All', onTap: () {}),
+                    CategoryButton(title: 'Series', onTap: () {}),
                     CategoryButton(title: 'Anime', onTap: () {}),
                     CategoryButton(title: 'Disney', onTap: () {}),
                     CategoryButton(title: 'Marvel', onTap: () {}),
@@ -313,10 +312,9 @@ class _HomePageState extends State<HomePage> {
       ),
 
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        currentIndex: 0,
-        selectedItemColor: Colors.grey,
-        unselectedItemColor: Colors.grey,
+        backgroundColor: Color(0xFF1B263B),
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white70,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: 'Home'),
           BottomNavigationBarItem(
