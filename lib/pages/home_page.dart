@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                   Navigator.pop(context);
                 },
                 icon: const Icon(
-                  Icons.exit_to_app_outlined,
+                  Icons.arrow_back,
                   color: Colors.white,
                 ),
               )
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
             : Container(
                 height: 40,
                 decoration: BoxDecoration(
-                  color: Color(0xFF0D1B2A),
+                  color: Color(0xFF415A77),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Padding(
