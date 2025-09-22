@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     'assets/images/the-boys.jpeg',
   ];
 
-  final List<String> listFilm2 = [
+   final List<String> listFilm2 = [
     'assets/images/tangled.jpeg',
     'assets/images/zootopia.jpeg',
     'assets/images/brave.jpeg',
@@ -25,21 +25,7 @@ class _HomePageState extends State<HomePage> {
     'assets/images/luca.jpg',
   ];
 
-  final List<String> listFilm3 = [
-    'assets/images/insideout2.png',
-    'assets/images/up.jpg',
-    'assets/images/encanto.jpg',
-    'assets/images/turningred.jpg',
-    'assets/images/onward.jpg',
-  ];
-
-  final List<String> listFilm4 = [
-    'assets/images/avatar.jpg',
-    'assets/images/avatar2.jpg',
-    'assets/images/ant-man.jpg',
-    'assets/images/avenger-andgame.jpg',
-    'assets/images/black-panter.jpg',
-  ];
+  final CategoryList = ['Action','Adventure','Comedy','Drama','Fantasy','Horror','Romance','Thriller'];
 
   bool _isSearching = false;
   final TextEditingController _searchController = TextEditingController();
@@ -54,10 +40,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                icon: const Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
-                ),
+                icon: const Icon(Icons.arrow_back, color: Colors.white),
               )
             : null,
         title: !_isSearching
@@ -115,179 +98,94 @@ class _HomePageState extends State<HomePage> {
       ),
 
       backgroundColor: Color(0xFF0D1B2A),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              SizedBox(height: 15),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(5, (index) {
-                    return Container(
-                      width: 180,
-                      height: 250,
-                      margin: EdgeInsets.only(left: 10),
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        image: DecorationImage(
-                          image: AssetImage(listFilm1[index]),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    );
-                  }),
-                ),
-              ),
+      body: Stack(
+        children: [
+          SafeArea(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 15),
 
-              SizedBox(height: 15),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Recommended for You',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        size: 15,
-                        color: Colors.white,
-                      ),
-                    ],
+                  
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(5, (index) {
+                        return Container(
+                          width: 180,
+                          height: 250,
+                          margin: const EdgeInsets.only(left: 10),
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            image: DecorationImage(
+                              image: AssetImage(listFilm1[index]),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
                   ),
-                ),
-              ),
 
-              SizedBox(height: 15),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(5, (index) {
-                    return Container(
-                      margin: EdgeInsets.only(left: 10),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(5),
-                        child: Image.asset(
-                          listFilm2[index],
-                          height: 150,
-                          width: 120,
-                          fit: BoxFit.fitWidth,
-                        ),
-                      ),
-                    );
-                  }),
-                ),
-              ),
-
-              SizedBox(height: 15),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Upcoming',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        size: 15,
-                        color: Colors.white,
-                      ),
-                    ],
+                  const SizedBox(height: 15),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: const Text(
+                      "Categori",
+                      style: TextStyle(color: Colors.white,fontFamily: 'Poppins',fontSize: 16),
+                    ),
                   ),
-                ),
-              ),
-
-              SizedBox(height: 15),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(5, (index) {
-                    return Container(
-                      width: 120,
-                      height: 150,
-                      margin: EdgeInsets.only(left: 10),
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        image: DecorationImage(
-                          image: AssetImage(listFilm3[index]),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    );
-                  }),
-                ),
-              ),
-
-              SizedBox(height: 15),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Marvel',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        size: 15,
-                        color: Colors.white,
-                      ),
-                    ],
+                  const SizedBox(height: 10),
+                  SizedBox(
+                    height: 40, 
+                    child:  ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: CategoryList.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          margin: const EdgeInsets.only(left: 10),
+                          decoration: BoxDecoration(
+                            color: Color(0xFF415A77),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          child: Text(
+                            CategoryList[index],
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        );
+                      },
+                    )
                   ),
-                ),
+                  const SizedBox(height: 15),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(5, (index) {
+                        return Container(
+                          width: 180,
+                          height: 250,
+                          margin: const EdgeInsets.only(left: 10),
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            image: DecorationImage(
+                              image: AssetImage(listFilm2[index]),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+                ],
               ),
-
-              SizedBox(height: 15),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(5, (index) {
-                    return Container(
-                      width: 120,
-                      height: 150,
-                      margin: EdgeInsets.only(left: 10),
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        image: DecorationImage(
-                          image: AssetImage(listFilm4[index]),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    );
-                  }),
-                ),
-              ),
-              SizedBox(height: 15)
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
