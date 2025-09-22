@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_mobile/widgets/category_button.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -120,20 +120,6 @@ class _HomePageState extends State<HomePage> {
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              SizedBox(height: 8),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    CategoryButton(title: 'Series', onTap: () {}),
-                    CategoryButton(title: 'Anime', onTap: () {}),
-                    CategoryButton(title: 'Disney', onTap: () {}),
-                    CategoryButton(title: 'Marvel', onTap: () {}),
-                  ],
-                ),
-              ),
-
               SizedBox(height: 15),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
