@@ -72,13 +72,6 @@ class LoginPage extends StatelessWidget {
                       ),
                       SizedBox(height: 20),
 
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Text("Lupa Password?",
-                            style: TextStyle(color: Colors.white, fontSize: 12)),
-                      ),
-                      SizedBox(height: 20),
-
                       ElevatedButton(
                         onPressed: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));

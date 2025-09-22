@@ -303,23 +303,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xFF1B263B),
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white70,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: 'Home'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.download),
-            label: 'Download',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'Profil',
-          ),
-        ],
-      ),
     );
   }
 }
